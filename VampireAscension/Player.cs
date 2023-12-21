@@ -3,8 +3,8 @@ using System.Runtime.CompilerServices;
 
 public class Player
 {
-    private int _hp;
-    private string _name = string.Empty;
+    public int _hp;
+    public string _name = string.Empty;
     public List<string> _inventory = new List<string>();
 
     public Player(int hp, string name)
@@ -18,9 +18,18 @@ public class Player
         _inventory.Add(item);
     }
 
-    public void InventoryRemove()
+    public void InventoryRemove(string item)
     {
-
+        _inventory.RemoveAll(r => r.Equals(item));
     }
 
+    public void LoseHp(int amt)
+    {
+        _hp -= amt;
+    }
+
+    public void GainHp(int amt)
+    {
+        _hp += amt;
+    }
 }
