@@ -12,7 +12,7 @@ namespace VampireAscension
             bool _exit = false;
             while (!_exit)
             {
-                Console.WriteLine("What will you do?");
+                Dialogue.Speak("What will you do?");
 
                 if (Dialogue.Response() == "quit")
                 {
@@ -27,6 +27,7 @@ namespace VampireAscension
                     if (Decisions.directions.Contains(direction))
                     {
                         Decisions.walkHandler(direction);
+                        Scene.RandScene(player);
                     } else
                     {
                         Dialogue.Speak("Not a valid direction! (north, south, east, west) ");

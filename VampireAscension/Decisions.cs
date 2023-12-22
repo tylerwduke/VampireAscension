@@ -9,7 +9,7 @@ namespace VampireAscension
 {
     public class Decisions
     {
-        public static List<string> decisionList = new List<string>() { "walk" };
+        public static List<string> decisionList = new List<string>() { "walk", "feed" };
         public static List<string> directions = new List<string>(4) { "north", "south", "east", "west" };
 
 
